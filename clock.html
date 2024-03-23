@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Displaying Time</title>
+    <style type="text/css">
+        #tm{
+            color:lightsalmon;
+            text-align: center;
+            margin-top: 15%;
+            font-size: 200px;
+            font-family: Informal Roman;
+            text-shadow: 0px 25px 30px rgb(11, 74, 163);
+            -webkit-text-stroke: 5px darkmagenta;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="tm">00:00:00</h1>
+    <script type="text/javascript">
+        let tm = document.getElementById("tm");
+        function displayTime() {
+            let time = new Date();
+            let hr = (time.getHours())%12;
+            let mn = time.getMinutes();
+            let sc = time.getSeconds();
+            tm.innerHTML=`${hr}:${mn}:${sc}`;
+        }
+        setInterval(displayTime,100);
+    </script>
+</body>
+</html>
